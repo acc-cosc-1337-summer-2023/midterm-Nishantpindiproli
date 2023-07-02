@@ -2,11 +2,16 @@
 #include "catch.hpp"
 #include "question2.h"
 
-TEST_CASE("Verify Test Configuration", "verification") {
-	REQUIRE(true == true);
-}
+TEST_CASE("Decimal to Hexadecimal Conversion") {
+    SECTION("Valid input") {
+       
+        REQUIRE(decimal_to_hex(10) == "A");
+        REQUIRE(decimal_to_hex(170) == "AA");
+        REQUIRE(decimal_to_hex(255) == "FF");
+    }
 
-TEST_CASE("test")
-{
-	REQUIRE(test_config() == true);
+    SECTION("Invalid input") {
+        
+        REQUIRE(decimal_to_hex(513) == "Invalid input!");
+    }
 }
